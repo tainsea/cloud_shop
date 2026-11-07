@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: order-service
+
+  profiles:
+    active: dev
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: DEFAULT_GROUP
+
+  config:
+    import:
+      - nacos:order-service-dev.yaml?group=DEFAULT_GROUP&refreshEnabled=true
+
